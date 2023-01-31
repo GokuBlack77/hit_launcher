@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#2c2c2c"
+    tools:context=".screens.Setting">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textSize="22dp"
+        android:paddingVertical="15dp"
+        android:paddingHorizontal="10dp"
+        android:background="@color/teal_200"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:id="@+id/checkboxSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Status Bar"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layoutDirection="rtl"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Setting 3"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layoutDirection="rtl"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Setting 3"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:layoutDirection="rtl"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:text="Show Application"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvApplicationManager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/ivSettingBtn"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/ic_baseline_settings_24"
+            android:visibility="visible"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

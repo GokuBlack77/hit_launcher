@@ -29,6 +29,14 @@
             android:layout_marginHorizontal="10dp"
             android:text="Notif"/>
 
+        <Button
+            android:id="@+id/btnSetting"
+            android:layout_toRightOf="@id/btnNotification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:text="Settings"/>
+
     </RelativeLayout>
 
 

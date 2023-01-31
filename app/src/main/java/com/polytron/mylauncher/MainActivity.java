@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 //                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         loadFragment(new HomeScreenFragment());
-        NotificationManagerCompat.from(this).cancelAll();
+//        NotificationManagerCompat.from(this).cancelAll();
 
 //        if(Build.VERSION.SDK_INT >= 23 && !Settings.canDrawOverlays(this)) {
 //            StringBuilder sb = new StringBuilder();
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 //                    Uri.parse(sb.toString())),123);
 //        }
 
+        checkPermission();
 //        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
 //        intent.setData(Uri.parse("package:" + getPackageName()));
 //        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -66,13 +67,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 //
-//    public void checkPermission() {
-//        if (!Settings.canDrawOverlays(this)) {
-//            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-//                    Uri.parse("package:" + getPackageName()));
-//            startActivityForResult(intent, ACTION_MANAGE_OVERLAY_PERMISSION_REQUEST_CODE);
-//        }
-//    }
+    public void checkPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (!Settings.canDrawOverlays(this)) {
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        Uri.parse("package:" + getPackageName()));
+                startActivityForResult(intent, 2277);
+            }
+        }
+    }
 
     private void disablePullNotificationTouch() {
         WindowManager manager = ((WindowManager) getApplicationContext()
