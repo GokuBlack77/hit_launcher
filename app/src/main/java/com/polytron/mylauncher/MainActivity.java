@@ -55,27 +55,26 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
 
-        if(!checkPermission()) {
-        }
-
-//        preventStatusBarExpansion(this);
-//        try{
-//        }
-//        catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
+        checkPermission();
 
         try{
-            disablePullNotificationTouch();
+            preventStatusBarExpansion(this);
         }
         catch (Exception ex) {
             ex.printStackTrace();
         }
 
+//        try{
+//            disablePullNotificationTouch();
+//        }
+//        catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+
     }
 //
     public boolean checkPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (!Settings.canDrawOverlays(this)) {
                 Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
                 intent.setData(Uri.parse("package:" + getPackageName()));
@@ -85,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
 //                        Uri.parse("package:" + getPackageName()));
 //                startActivityForResult(intent, 2277);
                 return true;
+            }
+            else{
+                return false;
             }
         }
         return false;
@@ -105,8 +107,8 @@ public class MainActivity extends AppCompatActivity {
                 .getSystemService(Context.WINDOW_SERVICE));
         WindowManager.LayoutParams localLayoutParams = new WindowManager.LayoutParams();
 //        localLayoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
-//        localLayoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
-        localLayoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        localLayoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
+//        localLayoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
         localLayoutParams.gravity = Gravity.TOP;
         localLayoutParams.flags =
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE |
@@ -130,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
         Activity activity = (Activity)context;
         WindowManager.LayoutParams localLayoutParams = new WindowManager.LayoutParams();
         localLayoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
+//        localLayoutParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
         localLayoutParams.gravity = Gravity.TOP;
         localLayoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE|
 
