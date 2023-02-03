@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.polytron.mylauncher">
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.REORDER_TASKS" />
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.HIDE_OVERLAY_WINDOWS" />
-    <uses-permission android:name="android.permission.STATUS_BAR" tools:ignore="ProtectedPermissions"/>
-    <uses-permission android:name="android.permission.STATUS_BAR" tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
 
     <application
         android:allowBackup="true"
